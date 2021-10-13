@@ -1,0 +1,74 @@
+
+:root {
+--color-primary : #eb2f64;
+--color-primary-light : #FF3366;
+--color-primary-dark : #BA265D;
+    
+--color-grey_light-1 : #faf9f9;
+--color-grey_light-2 : #f4f2f2;
+--color-grey_light-3 : #f0eeee;
+--color-grey_light-4 : #ccc;
+
+--color-grey_dark-1 : #333;
+--color-grey_dark-2 : #777;
+--color-grey_dark-3 : #999;
+
+--line: 2px solid var(--color-grey_light-3);
+--shadow-dark: 0 2rem 6rem rgba(0,0,0, .3);
+--shadow-light: 0 2rem 5rem rgba(0,0,0,.06);
+
+}
+
+// Responsive Breakpoint Manager
+$bp-largest: 75em;     // 1200px
+$bp-large: 68.75em;    // 1100px
+$bp-minlarge: 64em;    // 1024px
+$bp-medium: 56.25em;   // 900px
+$bp-small: 37.5em;     // 600px
+$bp-smallest: 31.25em; // 500px
+$bp-minimax: 30em;     // 480px
+$bp-mini: 20em;        // 320px
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; // 1 rem = 10px, 10px/16px = 62.5% 
+
+    @media only screen and (max-width: $bp-large) {
+        // compress 8px / 16px = 0.5;  0.5 = 50%
+        font-size: 50%;
+    }
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--color-grey_dark-2);
+     background-image: linear-gradient(to right bottom, var(--color-primary), var(--color-primary-dark));
+     background-size: cover;
+     background-repeat: no-repeat;
+    min-height: 100vh;
+
+    @media only screen and (min-width: $bp-minlarge) and (max-width: $bp-large){
+        background-image: none;
+        min-height: 0;
+    }
+
+    @media only screen and (min-width: $bp-small) and (max-width: $bp-medium){
+        background-image: none;
+    }
+}
